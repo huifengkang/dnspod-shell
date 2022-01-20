@@ -83,34 +83,5 @@ echo "arDdnsCheck test.org subdomain" >> ./ardnspod
 
 请参阅 <https://github.com/anrip/dnspod-shell/graphs/contributors>
 
-DNSPod用户API实现的纯Shell动态域名客户端：ArDNSPod
-刺猬 · 2020-10-12 · Linux · 0 回复 · 赞 (0)
-之前博客分享过一个dnspod的ddns插件，后续好像是出了问题，无法正常使用，由于技术问题，博客也无法修复，具体文章：#二次更新 利用DNSPodAPI实现服务器DDNS解析，博客后续找到一个工具，ArDNSPod，基于DNSPod用户API实现的纯Shell动态域名客户端。
 
-博客进行了一部分修改：
-
-合并了ddnspod.sh和ardnspod
-修改了ip获取方式，直接从公网获取，不走内网，避免出问题。
-解析到新ip后，自动退出程序。
-下载：
-https://cikeblog.com/s/ardnspod
-
-修改：
-
-183行代码：
-arToken="15794x,23501514c6dba32dcebb04xxxxxxxxxx"
-请自行修改为dnspod的api信息，参照格式修改。
-187行代码：
-arDdnsCheck "1.cc" "a"
-解析内容为：a.1.cc 请自行修改，格式不要乱。
-使用：
-
-chmod +x ardnspod
-./ardnspod
-测试无误后，自行加入crontab即可，推荐使用以下信息：
-
-*/3 * * * * /root/ardnspod
-三分钟自动刷新一次ddns。
-
-作者github地址：https://github.com/anrip/dnspod-shell
-
+https://github.com/imki911/ardnspod
